@@ -1,8 +1,21 @@
 
 #include <iostream>
+#include <string>
 
 std::string alphabet_position(const std::string& text) {
-	return "";
+	std::string output = "";
+
+	for (char c : text) {
+		if (std::isalpha(c)) {
+			output += std::to_string(std::tolower(c) - 96) + " ";
+		}
+	}
+
+	if (!output.empty()) {
+		output.pop_back();
+	}
+
+	return output;
 }
 
 int main() {
